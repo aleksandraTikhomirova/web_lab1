@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ВЕБ Лабораторная работа №1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="main-header">
+        <div class="header-content">
+            <h1>Лабораторная работа №1 по веб-программированию</h1>
+            <p><span class="label">Тихомирова Александра Евгеньевна</span></p>
+            <p><span class="label">группа P3207</span></p>
+            <p><span class="label">вариант 12626</span></p>
+        </div>
+    </header> 
+    <main>
+        <section id="form-section">
+            <h2>Введите кооридинаты точки</h2>
+            <form id="point-form" action="#" method="get">
+                <div class="form-group">
+                    <label class="field-label">Выберите X</label>
+                    <div class="radio-group" id="x-group">
+                        <label><input type="radio" name="x" value="-2">-2</label>
+                        <label><input type="radio" name="x" value="-1.5">-1.5</label>
+                        <label><input type="radio" name="x" value="-1">-1</label>
+                        <label><input type="radio" name="x" value="-0.5">-0.5</label>
+                        <label><input type="radio" name="x" value="0">0</label>
+                        <label><input type="radio" name="x" value="0.5">0.5</label>
+                        <label><input type="radio" name="x" value="1">1</label>
+                        <label><input type="radio" name="x" value="1.5">1.5</label>
+                        <label><input type="radio" name="x" value="2">2</label>
+                    </div>
+                    <span class="validation-error" id="x-error"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label class="field-label" for="y-input">Введите Y (-5 до 5)</label>
+                    <input type="text" id="y-input" name="y">
+                    <span class="validation-error" id="y-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="field-label">Выберите R</label>
+                    <div class="checkbox-group" id="r-group">
+                        <label><input type="checkbox" name="r" value="1">1</label>
+                        <label><input type="checkbox" name="r" value="2">2</label>
+                        <label><input type="checkbox" name="r" value="3">3</label>
+                        <label><input type="checkbox" name="r" value="4">4</label>
+                        <label><input type="checkbox" name="r" value="5">5</label>
+                    </div>
+                    <span class="validation-error" id="r-error"></span>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" id="submit-btn">Проверить попадание</button>
+                    <button type="button" id="clear-btn">Очистить историю</button>
+                </div>
+            </form>
+        </section>
+        
+        <section id="canvas-section">
+            <h2>Координатная плоскость</h2>
+            <div class="canvas-wrapper">
+                <canvas id="graph-canvas" width="500" height="500"></canvas>
+            </div>
+        </section>
+        
+        <section id="results-section">
+            <h2>История проверок</h2>
+            <div class="table-wrapper">
+                <table id="results-table">
+                    <thead>
+                        <tr>
+                            <th>X</th>
+                            <th>Y</th>
+                            <th>R</th>
+                            <th>результат</th>
+                            <th>дата и время</th>     
+                        </tr>
+                    </thead>
+                    <tbody id="results-body">
+                    </tbody>
+                </table>
+            </div>
+            <p id="empty-message" class="info-message">Нет сохраненных результатов</p>                           
+        </section>    
+    </main>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>    
